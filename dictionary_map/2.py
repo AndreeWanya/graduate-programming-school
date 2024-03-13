@@ -7,7 +7,7 @@ def if_rep(my_list, n):
             rep_dict[num] = my_list.count(num)
     return rep_dict
 
-my_list = [randint(1, 10) for num in range(10)]
+my_list = [randint(1, 10) for num in range(100)]
 print(my_list)
 N = int(input('Введите N: '))
 
