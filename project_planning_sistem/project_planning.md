@@ -1,0 +1,7 @@
+![Страница проекта](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/1.png)  
+![Список задач](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/2.png)  
+![Закрытая задача](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/3.png)  
+![Задача в работе](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/4.png)  
+![Задача, требующая доп.информации](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/5.png)  
+![Списко проектов](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/6.png)  
+![Список задач](https://github.com/AndreeWanya/graduate-programming-school/blob/master/project_planning_sistem/7.png)  
