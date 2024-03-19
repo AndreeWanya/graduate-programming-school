@@ -1,3 +1,57 @@
+class Engine():
+    """ Любой двигатель имеет мощность в лошадинных силах и ваттах"""
+
+    def __init__(self, horsepower, wattage):
+        self._wattage = wattage
+        self._horsepower = horsepower
+
+    def set_wattage(self, wat):
+        self._wattage = wat
+
+    def set_horsepower(self, hp):
+        self._horsepower = hp
+
+    def get_power(self):
+        power = f"Мощность двигателя составляет {self._horsepower}Лс/{self._wattage}Ватт"
+        return power
+
+
+class ElectricEngine(Engine):
+    """ Двигатель электромобиля """
+
+    def __init__(self, horsepower, wattage):
+        super().__init__(horsepower, wattage)
+        self.__voltage = 380
+        self.__fuel = 'электричество'
+
+    def set_voltage(self, volt):
+        self.__voltage = volt
+
+    def get_voltage(self):
+        return self.__voltage
+
+    def get_fuel(self):
+        return self.__fuel
+
+
+class GasEngine(Engine):
+    """ Двигатель внутреннего сгорания """
+
+    def __init__(self, horsepower, wattage, volume_eng):
+        super().__init__(horsepower, wattage)
+        self.__volume_emg = volume_eng
+        self.__fuel = '92 бензин'
+
+    def set_fuel(self, fuel_mark):
+        self.__fuel = fuel_mark
+
+    def get_fuel(self):
+        return self.__fuel
+
+    def get_volume_eng(self):
+        return self.__volume_emg
+
+
 class Car():
     """ Любой автомобиль """
 
@@ -32,6 +86,9 @@ class ElectricCar(Car):
     def get_engine(self):
         return self.__engine
 
+    def set_engine(self, engine: ElectricEngine):
+        self.__engine = engine
+
 
 class Lorry(Car):
     """ Грузовик """
@@ -49,6 +106,9 @@ class Lorry(Car):
 
     def get_engine(self):
         return self.__engine
+
+    def set_engine(self, engine: GasEngine):
+        self.__engine = engine
 
 
 class Bus(Car):
