@@ -5,7 +5,7 @@ class Car():
         self._maker = maker
         self._model = model
         self._year = year
-        self._engine = Engine(1)
+        self._engine = Engine(0, 0)
 
     def get_full_name(self):
         full_name = f"{self._maker} {self._model} {self._year}"
@@ -21,8 +21,7 @@ class ElectricCar(Car):
     def __init__(self, maker, model, year, battery_size):
         super().__init__(maker, model, year)
         self.__battery_size = battery_size
-        self.__engine = Engine(2)
-
+        self.__engine = ElectricEngine(0, 0)
 
     def set_battery_size(self, b_size):
         self.__battery_size = b_size
@@ -40,6 +39,7 @@ class Lorry(Car):
     def __init__(self, maker, model, year):
         super().__init__(maker, model, year)
         self.__tonnage = 15
+        self.__engine = GasEngine(0, 0, 0)
 
     def set_tonnage(self, ton):
         self.__tonnage = ton
@@ -47,9 +47,12 @@ class Lorry(Car):
     def get_tonnage(self):
         return self.__tonnage
 
+    def get_engine(self):
+        return self.__engine
+
 
 class Bus(Car):
-    """ Автобюус """
+    """ Автобус """
 
     def __init__(self, maker, model, year, seats):
         super().__init__(maker, model, year)
@@ -63,19 +66,58 @@ class Bus(Car):
 
 
 class Engine():
+    """ Любой двигатель имеет мощность в лошадинных силах и ваттах"""
 
-    def __init__(self, en_type):
-        self._type = en_type  # 1 - двигатель внутреннего сгорания, 2 - электродвигатель
-        if self._type == 1:
-            self._fuel = 'бензин'
-        else:
-            self._fuel = 'электричество'
+    def __init__(self, horsepower, wattage):
+        self._wattage = wattage
+        self._horsepower = horsepower
 
-    def get_type(self):
-        return self._type
+    def set_wattage(self, wat):
+        self._wattage = wat
+
+    def set_horsepower(self, hp):
+        self._horsepower = hp
+
+    def get_power(self):
+        power = f"Мощность двигателя составляет {self._horsepower}Лс/{self._wattage}Ватт"
+        return power
+
+
+class ElectricEngine(Engine):
+    """ Двигатель электромобиля """
+
+    def __init__(self, horsepower, wattage):
+        super().__init__(horsepower, wattage)
+        self.__voltage = 380
+        self.__fuel = 'электричество'
+
+    def set_voltage(self, volt):
+        self.__voltage = volt
+
+    def get_voltage(self):
+        return self.__voltage
 
     def get_fuel(self):
-        return self._fuel
+        return self.__fuel
+
+
+class GasEngine(Engine):
+    """ Двигатель внутреннего сгорания """
+
+    def __init__(self, horsepower, wattage, volume_eng):
+        super().__init__(horsepower, wattage)
+        self.__volume_emg = volume_eng
+        self.__fuel = '92 бензин'
+
+    def set_fuel(self, fuel_mark):
+        self.__fuel = fuel_mark
+
+    def get_fuel(self):
+        return self.__fuel
+
+    def get_volume_eng(self):
+        return self.__volume_emg
+
 
 PAZ_32054 = Bus('Павловский автобусный завод', "ПАЗ-32054", 2023, 39)
 Kamaz_65115 = Lorry('Камский автомобильный завод', "КамАЗ-65115", 2011)
