@@ -1,14 +1,22 @@
 import os.path
 
+
+def grep(path):
+    dirs, files = [], []
+    for f in os.listdir(path):
+        if os.path.isdir(os.path.join(path, f)):
+            dirs.append(f)
+        else:
+            files.append(f)
+    return dirs, files
+
+
 def del_dir(path):
     if os.path.isdir(path) == False:
         return False
-    counter = 0
-    for root, dirs, files in os.walk(path):
-        counter += 1
-        if counter == 2:
-            return False
-        files = files
+    dirs, files = grep(path)
+    if len(dirs) != 0:
+        return False
     for fi in files:
         os.remove(path + '/' + fi)
     os.rmdir(path)
