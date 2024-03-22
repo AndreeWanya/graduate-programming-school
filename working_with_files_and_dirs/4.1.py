@@ -2,8 +2,13 @@ import os.path
 import logging
 
 def grep(path):
-    for root, dirs, files in os.walk(path):
-        return dirs, files
+    dirs, files = [], []
+    for f in os.listdir(path):
+        if os.path.isdir(os.path.join(path, f)):
+            dirs.append(f)
+        else:
+            files.append(f)
+    return dirs, files
 
 def if_flag(path, file_extension, flag):
     my_list = list(grep(path))
