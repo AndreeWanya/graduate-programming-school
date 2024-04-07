@@ -14,9 +14,9 @@ def PatternUnlock(N: int, hits: list) -> str:
             unlock_code += sqrt(2)
         else:
             unlock_code += 1
-    unlock_code = str(unlock_code * 100000)
-    unlock_code = unlock_code[:unlock_code.find('.')].strip('0')
-    return unlock_code
+    unlock_code = str(round(unlock_code * 100000))
+    print(unlock_code)
+    return unlock_code.strip('0')
 
 #print(PatternUnlock(10, [1, 2, 3, 4, 5, 6, 2, 7, 8, 9]))
 #print(PatternUnlock(3, [2, 1, 9]))
