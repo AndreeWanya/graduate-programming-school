@@ -15,7 +15,6 @@ def PatternUnlock(N: int, hits: list) -> str:
         else:
             unlock_code += 1
     unlock_code = str(round(unlock_code * 100000))
-    print(unlock_code)
     return unlock_code.strip('0')
 
 #print(PatternUnlock(10, [1, 2, 3, 4, 5, 6, 2, 7, 8, 9]))
