@@ -2,6 +2,8 @@ def WordSearch(len_sub: int, s: str, subs: str) -> list:
     if len(s) < len_sub:
         if subs in s:
             return [1]
+        else:
+            return [0]
     new_line = ''
     subs_list = []
     for i in range(len(s)):
@@ -25,3 +27,4 @@ def WordSearch(len_sub: int, s: str, subs: str) -> list:
     return result_list
 
 #print(WordSearch(12, '1) cnhjrf hfp,bdftncz yf yf,jh cnhjr xthtp dshfdybdfybt gj pflfyyjq ibhbyt/', 'cnhjr'))
+#print(WordSearch(10, '12345', 'subs'))
