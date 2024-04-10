@@ -37,8 +37,7 @@ def WordSearch(len_sub: int, s: str, subs: str) -> list:
     	else:
     		result.append(0)
     return result
-    
-    
-print(WordSearch(12, '1) stroka razbivaetsya na nabor strok cherez vyravnivanie po zadannoj shirine.', 'strok'))
-print(WordSearch(10, '12345', 'subs'))
-print(WordSearch(3, '12345', '123'))
+        
+#print(WordSearch(12, '1) stroka razbivaetsya na nabor strok cherez vyravnivanie po zadannoj shirine.', 'strok'))
+#print(WordSearch(10, '12345', 'subs'))
+#print(WordSearch(3, '12345', '123'))
