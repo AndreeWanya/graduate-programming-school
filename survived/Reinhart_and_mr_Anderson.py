@@ -14,8 +14,12 @@ def BigMinus(s1: str, s2: str) -> str:
         else:
             av_value = str(10 + n) + av_value
             n = 1
+    av_value = av_value.lstrip('0')
+    if len(av_value) == 0:
+        av_value = '0'
     return av_value
 
 #print(BigMinus('1234567891', '1'))
 #print(BigMinus('1', '321'))
 #print(BigMinus('123456789', '987654321'))
+#print(BigMinus('1234567890', '1234567890'))
