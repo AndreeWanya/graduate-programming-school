@@ -4,9 +4,9 @@ def MassVote(N: int, Votes: list) -> str:
         counter += 1
         if Votes[i] == max(Votes):
             break
-    if max(Votes) * 100 / sum(Votes) >= 50 and Votes.count(max(Votes)) == 1:
+    if max(Votes) * 100 / sum(Votes) > 50 and Votes.count(max(Votes)) == 1:
         return 'majority winner ' + str(counter)
-    elif max(Votes) * 100 / sum(Votes) < 50 and Votes.count(max(Votes)) == 1:
+    elif max(Votes) * 100 / sum(Votes) <= 50 and Votes.count(max(Votes)) == 1:
         return 'minority winner ' + str(counter)
     else:
         return 'no winner'
@@ -17,3 +17,4 @@ def MassVote(N: int, Votes: list) -> str:
 #print(MassVote(8, [111, 111, 110, 110, 50, 60, 70, 80]))
 #print(MassVote(2, [111, 110]))
 #print(MassVote(5, [10, 10, 60, 15, 5]))
+print(MassVote(3, [23, 50, 27]))
