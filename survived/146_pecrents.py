@@ -17,4 +17,4 @@ def MassVote(N: int, Votes: list) -> str:
 #print(MassVote(8, [111, 111, 110, 110, 50, 60, 70, 80]))
 #print(MassVote(2, [111, 110]))
 #print(MassVote(5, [10, 10, 60, 15, 5]))
-print(MassVote(3, [23, 50, 27]))
+#print(MassVote(3, [23, 50, 27]))
