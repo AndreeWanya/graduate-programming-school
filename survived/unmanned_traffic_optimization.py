@@ -19,10 +19,11 @@ def Unmanned(L: int, N: int, track: list) -> int:
         else:
             time += track[i][0] - track[i-1][0] + check_if_green
         lenght += track[i][0] - track[i-1][0]
-    if traffic_light_checking(time, track[i]) == 0:
+    if traffic_light_checking(time, track[-1]) == 0:
         time += L - lenght
     else:
-        time += L - lenght + traffic_light_checking(time, track[i])
+        time += L - lenght + traffic_light_checking(time, track[-1])
     return time
 
 #print(Unmanned(10, 2, [[3, 5, 5], [5, 2, 2]]))
+#print(Unmanned(10, 1, [[5, 55, 5]]))
