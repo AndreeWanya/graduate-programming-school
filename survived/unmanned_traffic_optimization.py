@@ -1,12 +1,12 @@
 def traffic_light_checking(time: int, track: list) -> int:
     red_green = [0]
-    n = track[0] + track[1]
-    while sum(red_green) < n:
+    n = time + track[1]
+    while red_green[-1] < n:
         red_green.append(red_green[-1] + track[1])
         red_green.append(red_green[-1] + track[2])
     for i in range(0, len(red_green), 2):
-        if time in range(red_green[i], track[1]):
-            return track[1] - time
+        if time in range(red_green[i], red_green[i] + track[1]):
+            return red_green[i] + track[1] - time
     return 0
 
 def Unmanned(L: int, N: int, track: list) -> int:
@@ -27,3 +27,4 @@ def Unmanned(L: int, N: int, track: list) -> int:
 
 #print(Unmanned(10, 2, [[3, 5, 5], [5, 2, 2]]))
 #print(Unmanned(10, 1, [[5, 55, 5]]))
+#print(Unmanned(10, 2, [[3, 6, 2], [6, 2, 2]]))
