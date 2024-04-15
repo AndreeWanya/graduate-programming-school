@@ -10,6 +10,8 @@ def traffic_light_checking(time: int, track: list) -> int:
     return 0
 
 def Unmanned(L: int, N: int, track: list) -> int:
+    if track[0][0] >= L:
+        return L
     time = track[0][0]
     lenght = track[0][0]
     for i in range(1, N):
@@ -28,3 +30,4 @@ def Unmanned(L: int, N: int, track: list) -> int:
 #print(Unmanned(10, 2, [[3, 5, 5], [5, 2, 2]]))
 #print(Unmanned(10, 1, [[5, 55, 5]]))
 #print(Unmanned(10, 2, [[3, 6, 2], [6, 2, 2]]))
+#print(Unmanned(10, 2, [[11, 5, 5], [15, 2, 2]]))
