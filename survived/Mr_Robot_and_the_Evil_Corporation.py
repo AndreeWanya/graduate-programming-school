@@ -1,4 +1,5 @@
 import time
+
 def three_nums_sorting(sub_data):
 	for i in range(2):
 		sub_data[2], sub_data[1], sub_data[0] = sub_data[0], sub_data[2], sub_data[1]
@@ -7,6 +8,7 @@ def three_nums_sorting(sub_data):
 	return sub_data
 
 def MisterRobot(N: int, data: list) -> bool:
+	start_time = time.time()
 	while (time.time() - start_time) < 1:
 		for i in range(2, N):
 			if data[i] < data[i - 1]:
@@ -17,8 +19,6 @@ def MisterRobot(N: int, data: list) -> bool:
 			if data == sorted(data):
 				return True
 	return False
-
-start_time = time.time()
 
 #print(MisterRobot(7, [1, 3, 4, 5, 6, 2, 7]))
 #print(MisterRobot(10, [9, 8, 7, 6, 5, 4, 3, 2, 1, 10]))
