@@ -12,10 +12,7 @@ def MisterRobot(N: int, data: list) -> bool:
 	while (time.time() - start_time) < 1:
 		for i in range(2, N):
 			if data[i] < data[i - 1]:
-				print(data)
 				data = data[:i - 2] + three_nums_sorting(data[i - 2: i + 1]) + data[i + 1:]
-				print(data)
-				print()
 			if data == sorted(data):
 				return True
 	return False
