@@ -1,22 +1,22 @@
 def ShopOLAP(N: int, items: list) -> list:
     items = sorted(items)
-    del_items = []
-    for i in range(N - 1):
-        if items[i].split()[0] == items[i + 1].split()[0]:
-            items[i] = items[i].split()[0] + ' ' + str(int(items[i].split()[1]) + int(items[i + 1].split()[1]))
-            del_items.append(i + 1)
-    for item in del_items:
-        del items[item]
-    sorted_items = {}
+    items_dict = {}
     for item in items:
-        sorted_items[int(item.split()[1])] = []
+        items_dict[item.split()[0]] = 0
     for item in items:
-        sorted_items[int(item.split()[1])].append(item.split()[0])
-    items = []
-    for key in sorted(sorted_items, reverse=True):
-        for item in sorted(sorted_items[key]):
-            items.append(item + ' ' + str(key))
-    return items
+        items_dict[item.split()[0]] += int(item.split()[1])
+    items = {}
+    for value in items_dict.values():
+        items[value] = []
+    for key, value in items_dict.items():
+        items[value].append(key)
+    result = []
+    for key in sorted(items, reverse=True):
+        for value in sorted(items[key]):
+            result.append(value + ' ' + str(key))
+
+    return result
 
 
 #print(ShopOLAP(5, ['платье1 5', 'сумка32 2', 'платье1 1', 'сумка23 2', 'сумка128 4']))
+#print(ShopOLAP(8,['123 5','32 3','124 5','128 1','32 2','23 4','128 4','128 1']))
