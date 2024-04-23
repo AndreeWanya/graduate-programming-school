@@ -11,8 +11,11 @@ def BiggerGreater(input_s: str) -> str:
             break
 
     s_list = [x for x in s_list if x > input_s]
-    return min(s_list)
+    if len(s_list) == 0:
+    	return ''
+    else:
+    	return min(s_list)
 
-#str_list = ['ая', 'fff', 'нклм', 'вибк', 'вкиб', 'b']
+#str_list = ['ая', 'fff', 'нклм', 'вибк', 'вкиб', 'b', 'za']
 #for s in str_list:
 #    print(BiggerGreater(s))
