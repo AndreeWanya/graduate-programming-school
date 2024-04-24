@@ -15,6 +15,6 @@ def SherlockValidString(s: str) -> bool:
 			return False
 	return True
 	
-s_list = ['xyz', 'xyzaa', 'xxyyz', 'xyzzz', 'xxyyza', 'xxyyzabc']
-for s in s_list:
-	print(SherlockValidString(s))
+#s_list = ['xyz', 'xyzaa', 'xxyyz', 'xyzzz', 'xxyyza', 'xxyyzabc']
+#for s in s_list:
+#	print(SherlockValidString(s))
