@@ -18,6 +18,7 @@ def tree_converting(tree: list, encr: bool) -> list:
                     s[i] = '+'
             another_tree.append(''.join(s))
     return another_tree
+
 def TreeOfLife(H: int, W: int, N: int, tree: list) -> list:
     tree = tree_converting(tree, True)
     for i in range(N):
