@@ -1,11 +1,9 @@
 def sum_of_nums_digits(num: int) -> int:
-	num = str(num)
-	res = int(num[0])
-	if len(num) == 1:
+	res = num % 10
+	if num // 10 == 0:
 		return res
-	num = num[1:]
-	return res + sum_of_nums_digits(num)
+	return res + sum_of_nums_digits(num // 10)
 		
 # nums = [1, 23, 456, 7890]
 # for num in nums:
-#	print(sum_of_nums_digits(num))
+# 	print(sum_of_nums_digits(num))
