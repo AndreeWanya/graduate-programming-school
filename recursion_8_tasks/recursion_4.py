@@ -1,10 +1,14 @@
 def is_palindrome(s: str) -> bool:
     s = s.replace(' ', '').lower()
-    if s[0] != s[-1]:
+    return is_palindrome_prepare_string(s, len(s))
+
+def is_palindrome_prepare_string(s: str, length: int) -> bool:
+    if s[length-1] != s[-length]:
         return False
-    if len(s) <= 1:
+    if length <= 1:
         return True
-    return is_palindrome(s[1: -1])
+    length -= 1
+    return is_palindrome_prepare_string(s, length)
 
 # strings = ['топот', 'топор', 'а роза упала на лапу Азора', 'мама мыла раму', '1001001', '1009002']
 # for s in strings:
