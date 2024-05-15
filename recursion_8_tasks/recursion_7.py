@@ -1,7 +1,11 @@
 def second_max(nums: list) -> int:
     if nums[0] >= nums[1]:
-    	return second_max_cont(nums, nums[0], nums[1], 2)
-    return second_max_cont(nums, nums[1], nums[0], 0)
+    	f_max = nums[0]
+    	s_max = nums[1]
+    else:
+    	f_max = nums[1]
+    	s_max = nums[0]
+    return second_max_cont(nums, f_max, s_max, 2)
 
 def second_max_cont(nums: list, f_max: int, s_max: int, ind: int) -> int:
     if ind == len(nums):
