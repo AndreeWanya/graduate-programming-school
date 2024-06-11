@@ -22,7 +22,7 @@ def matrix(n: int, m: int, matrix: list) -> list:
 			dir = not dir
 	return lst_of_mtrx
 	
-mtrx = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
-print(matrix(len(mtrx[0]), len(mtrx), mtrx))
-mtrx = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]]
-print(matrix(len(mtrx[0]), len(mtrx), mtrx))
+# mtrx = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+# print(matrix(len(mtrx[0]), len(mtrx), mtrx))
+# mtrx = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]]
+# print(matrix(len(mtrx[0]), len(mtrx), mtrx))
