@@ -88,51 +88,9 @@ class LinkedList:
                 node.next = newNode
                 break
             node = node.next
+        if newNode.next is None:
+            self.tail = newNode
         if afterNode == None:
             self.head = newNode
             self.head.next = node
-        
-    
-#n1 = Node(55)
-#n2 = Node(12)
-#n1.next = n2		# 12 -> 55
-s_list = LinkedList()
-#s_list.add_in_tail(n1)
-#s_list.add_in_tail(n2)
-#s_list.add_in_tail(Node(128))
-#s_list.add_in_tail(Node(12))
-#s_list.add_in_tail(Node(88))
-s_list.print_all_nodes()
-
-print()
-#
-#nf = s_list.find(55)
-#if nf is not None:
-#    print(nf.value)
-    
-#print()
-    
-s_list.delete(12, True)
-s_list.print_all_nodes()
-
-#print()
-#print(s_list.head.value)
-#print(s_list.tail.value)
-
-#s_list.clean()
-
-#print()
-#print(s_list.head)
-#print(s_list.tail)
-
-#nf = s_list.find_all(12)
-#for n in nf:
-#    print(n.value)
-#    print(n.next)
-
-#print(s_list.len())
-
-#s_list.insert(None, Node(666))
-#s_list.print_all_nodes()
-
 
