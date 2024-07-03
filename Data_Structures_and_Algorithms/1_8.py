@@ -94,7 +94,7 @@ class LinkedList:
             self.head = newNode
             self.head.next = node
             
-def LinkedListsSum(l_list1, l_list2):
+def LinkedLists2(l_list1, l_list2):
     node_1 = l_list1.head
     node_2 = l_list2.head
     result = []
