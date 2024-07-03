@@ -41,30 +41,30 @@ class LinkedList:
         return nf
     
     def delete(self, val, all=False):
-        if self.head is not None:
-            self.del_all(val, all)
-        if self.tail is not None and self.tail.value == val:
-            self.del_all(val, True)
-        
-    def del_all(self, val, all=False):
         node = self.head
-        if node.next == None and node.value == val:
-            self.head = None
-            self.tail = None
         while node is not None:
-            if node.next != None:
-                if node.value == val and node.next != None:
-                    node.value = node.next.value
-                    node.next = node.next.next
-                    if all == False:
-                        break
-                elif node.next.next == None and node.next.value == val:
-                    node.next = None
-                    self.tail = node
-                else:
-                    node = node.next
+            if node.next is None and node.value == val:
+                self.head = None
+                self.tail = None
+                break
+            elif node.next is None:
+                break
+            elif node.value == val:
+                node.value = node.next.value
+                node.next = node.next.next
+                if all==False:
+                    break
+            elif node.next.next is not None and node.next.value == val:
+                node.next.value = node.next.next.value
+                node.next.next = node.next.next.next
+                if all==False:
+                    break
+            elif node.next.next is None and node.next.value == val:
+                node.next = None
+                self.tail = node
             else:
-                node = node.next            
+                node = node.next
+            
                 
     def clean(self):
         self.head = None
