@@ -54,11 +54,11 @@ class LinkedList:
                 node.next = node.next.next
                 if all==False:
                     break
-        #    elif node.next.next is not None and node.next.value == val:
-        #        node.next.value = node.next.next.value
-        #        node.next.next = node.next.next.next
-        #        if all==False:
-        #            break
+            elif node.next.next is not None and node.next.value == val:
+                node.next.value = node.next.next.value
+                node.next.next = node.next.next.next
+                if all==False:
+                    break
             elif node.next.next is None and node.next.value == val:
                 node.next = None
                 self.tail = node
