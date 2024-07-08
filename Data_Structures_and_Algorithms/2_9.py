@@ -64,8 +64,7 @@ class LinkedList2:
         node = self.head
         while node is not None:
             result += 1
-            if node.next is not None:
-                node = node.next
+            node = node.next
         return result
 
     def insert(self, afterNode, newNode):
@@ -91,6 +90,7 @@ class LinkedList2:
     def add_in_head(self, newNode):
         if self.head is None:
             self.head = newNode
+            self.tail = newNode
         else:
             newNode.next = self.head.next
             self.head = newNode
@@ -261,7 +261,75 @@ class InsertTests(unittest.TestCase):
 class AddInHeadTests(unittest.TestCase):
     
     def test_empty_list(self):
-        pass
+        s_list = LinkedList2()
+        self.assertIsNone(s_list.head)
+        self.assertIsNone(s_list.tail)
+        s_list.add_in_head(Node(15))
+        self.assertEqual(s_list.head.value, 15)
+        self.assertEqual(s_list.tail.value, 15)
+        
+    def test_full_list(self):
+        test_list = [55, 12, 128, 12, 88]
+        s_list = LinkedList2()
+        for num in test_list:
+            s_list.add_in_tail(Node(num))
+        s_list.add_in_head(Node(34))
+        self.assertEqual(s_list.head.value, 34)
+        self.assertEqual(s_list.tail.value, 88)
+        s_list.add_in_head(Node(21))
+        self.assertEqual(s_list.head.value, 21)
+        self.assertEqual(s_list.tail.value, 88)
+    
+    def test_one_item_list(self):
+        s_list = LinkedList2()
+        s_list.add_in_tail(Node(12))
+        s_list.add_in_head(Node(76))
+        self.assertEqual(s_list.head.value, 76)
+        self.assertEqual(s_list.tail.value, 12)
+        
+class CleanTests(unittest.TestCase):
+    
+    def test_empty_list(self):
+        s_list = LinkedList2()
+        self.assertIsNone(s_list.head)
+        self.assertIsNone(s_list.tail)
+        s_list.clean()
+        self.assertIsNone(s_list.head)
+        self.assertIsNone(s_list.tail)
+        
+    def test_full_list(self):
+        test_list = [55, 12, 128, 12, 88]
+        s_list = LinkedList2()
+        for num in test_list:
+            s_list.add_in_tail(Node(num))
+        s_list.clean()
+        self.assertIsNone(s_list.head)
+        self.assertIsNone(s_list.tail)
+    
+    def test_one_item_list(self):
+        s_list = LinkedList2()
+        s_list.add_in_tail(Node(12))
+        s_list.clean()
+        self.assertIsNone(s_list.head)
+        self.assertIsNone(s_list.tail)
+        
+class LenTests(unittest.TestCase):
+    
+    def test_empty_list(self):
+        s_list = LinkedList2()
+        self.assertEqual(s_list.len(), 0)
+        
+    def test_full_list(self):
+        test_list = [55, 12, 128, 12, 88]
+        s_list = LinkedList2()
+        for num in test_list:
+            s_list.add_in_tail(Node(num))
+        self.assertEqual(s_list.len(), 5)
+    
+    def test_one_item_list(self):
+        s_list = LinkedList2()
+        s_list.add_in_tail(Node(12))
+        self.assertEqual(s_list.len(), 1)
 
-if __name__ == '__main__':
-     unittest.main()
+#if __name__ == '__main__':
+#     unittest.main()
