@@ -42,16 +42,16 @@ class LinkedList2:
             if node.value == val and node.next is not None:
                 node.value = node.next.value
                 node.next = node.next.next
-                if all==False:
+                if all == False:
                     break
             elif node.value == val and node.next is None:
                 if node.prev is not None:
-                    node.prev.next = node.next
+                    node.prev.next = None
                     self.tail = node.prev
                 else:
                     self.head = None
                     self.tail = None
-                node = node.next
+                node = None
             else:
                 node = node.next            
 
