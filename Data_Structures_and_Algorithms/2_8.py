@@ -47,12 +47,16 @@ class LinkedList2:
                 elif node.next is not None:
                     node.value = node.next.value
                     node.next = node.next.next
+                    if node.prev is None:
+                        self.head = node
+                    if node.next is None:
+                        self.tail = node
                     if all == False:
-                        node = None
+                        break
                 else:
                     node.prev.next = None
                     self.tail = node.prev
-                    node = None
+                    break
             else:
                 node = node.next            
 
